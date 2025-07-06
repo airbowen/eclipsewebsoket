@@ -7,23 +7,31 @@ interface TestData {
   Name: string
   Price: string
   Quantity: string
+  Action: string  // 添加 Action 字段
+  Time: string    // 添加 Time 字段
 }
 
-const TestDataSender: React.FC = () => {
+interface Props {
+  websocket: WebSocket | null
+}
+
+const TestDataSender: React.FC<Props> = ({ websocket }) => {
   const [testData, setTestData] = useState<TestData>({
     RowId: '1',
     Portfolio: 'Portfolio 1',
     Code: '0007',
     Name: 'HK FINANCE INV',
     Price: '0.092',
-    Quantity: '100'
+    Quantity: '100',
+    Action: 'Add',    // 设置默认 Action
+    Time: '0'         // 设置默认 Time
   })
 
   const sendTestData = () => {
-    const ws = new WebSocket('ws://localhost:5000/ws')
-    ws.onopen = () => {
-      ws.send(JSON.stringify(testData))
-      ws.close()
+    if (websocket && websocket.readyState === WebSocket.OPEN) {
+      websocket.send(JSON.stringify(testData))
+    } else {
+      console.error('WebSocket 未连接')
     }
   }
 

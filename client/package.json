@@ -4,9 +4,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "playwright test"
   },
   "dependencies": {
+    "ag-grid-community": "^34.0.0",
+    "ag-grid-react": "^34.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
