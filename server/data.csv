@@ -1,0 +1,9 @@
+Time,RowId,Action,Portfolio,Code,Name,Price,Quantity
+0,2,Add,Portfolio 1,0007,HK FINANCE INV,0.092,100
+0,1,Add,Portfolio 1,0005,HSBC HOLDINGS,31.09,100
+0,8,Add,Portfolio 2,0068,LEE HING,1.21,100
+1,5,Add,Portfolio 2,0051,HARBOUR CENTRE,7.1,50
+1,9,Add,Portfolio 1,0068,LEE HING,1.21,50
+2,10,Add,Portfolio 2,0293,CATHAY PAC AIR,5.86,100
+2,5,Update,Portfolio 2,0051,HARBOUR CENTRE,7.1,75
+2,2,Update,Portfolio 1,0007,HK FINANCE INV,0.091,100
